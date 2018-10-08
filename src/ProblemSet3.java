@@ -92,7 +92,7 @@ public class ProblemSet3 {
 		System.out.println("\nPrime");
 		System.out.println("Number: ");
 		int prime = input.nextInt();
-		ps3.isPrime(prime);
+		ps3.isPrime(prime); 
 		
 		input.close();
 	}
@@ -100,18 +100,18 @@ public class ProblemSet3 {
 	public void dateFashion(int you, int date) {
 		if (you >= 8 || date >= 8) {
 			if (you <= 2 || date <= 2) {
-				System.out.println("No");
+				System.out.println("NO.");
 				return;
 			} else {
-				System.out.println("Yes");
+				System.out.println("YES.");
 				return;
 			}
 		} else {
 			if (you <= 2 || date <= 2) {
-				System.out.println("No");
+				System.out.println("NO.");
 				return;
 			} else {
-				System.out.println("Maybe");
+				System.out.println("MAYBE.");
 				return;
 			}
 		}
@@ -120,34 +120,34 @@ public class ProblemSet3 {
 	public void fizzString(String str) {
 		int length = str.length();
 		if (str.charAt(0) == 'f') {
-			System.out.print("fizz");
+			System.out.print("FIZZ");
 		}
 		if (str.charAt(length - 1) == 'b') {
-			System.out.print("buzz");
+			System.out.print("BUZZ");
 		} 
 		if (str.charAt(0) != 'f' && str.charAt(length - 1) != 'b') {
 			System.out.print(str);
 		}
-		System.out.print("\n");
+		System.out.print(".\n");
 		return;
 	}
 		
 	public void squirrelPlay(int temp, boolean isSummer) {
 		int upper = (isSummer == true) ? 100 : 90;
 		if (temp >= 60 && temp <= upper) {
-			System.out.println("Yes");
+			System.out.println("YES.");
 		} else {
-			System.out.println("No");
+			System.out.println("NO.");
 		}
 		return;
 	}
 	
 	public void fizzStringAgain(int n) {
 		if (n % 3 == 0) {
-			System.out.print("fizz");
+			System.out.print("FIZZ");
 		}
 		if (n % 5 == 0) {
-			System.out.print("buzz");
+			System.out.print("BUZZ");
 		}
 		if (n % 3 != 0 && n % 5 != 0) {
 			System.out.print(n);
@@ -157,18 +157,18 @@ public class ProblemSet3 {
 	}
 	
 	public void makeBricks(int small, int big, int goal) {
-		int bigUsed = goal / 5;
-		if (bigUsed > big)
-		{
-			System.out.println("No");
-			return;
-		}
 		int remainder = goal % 5;
-		if (remainder > small) {
-			System.out.println("No");
+		
+		
+		
+		if (small + big * 5 < goal) {
+			System.out.println("NO.");
+			return;
+		} else if (goal % 5 > small) {
+			System.out.println("NO.");
 			return;
 		} else {
-			System.out.println("Yes");
+			System.out.println("YES.");
 			return;
 		}
 	}
@@ -186,30 +186,30 @@ public class ProblemSet3 {
 		if (a == c) {
 			a = c = 0;
 		}
-		System.out.println(a + b + c);
+		System.out.println(a + b + c + ".");
 		return;
 	}
 	
 	public void luckySum(int a, int b, int c) {
 		int sum = 0;
 		if (a == 13) {
-			System.out.println(sum);
+			System.out.println(sum + ".");
 			return;
 		}
 		sum += a;
 		
 		if (b == 13) {
-			System.out.println(sum);
+			System.out.println(sum +".");
 			return;
 		}
 		sum += b;
 		
 		if (c == 13) {
-			System.out.println(sum);
+			System.out.println(sum + ".");
 			return;
 		}
 		sum += c;
-		System.out.println(sum);
+		System.out.println(sum + ".");
 		return;
 	}
 	
@@ -218,7 +218,7 @@ public class ProblemSet3 {
 		for (int count = n; count > 0; count--) {
 			factorial *= count;
 		}
-		System.out.println(factorial);
+		System.out.println(factorial + ".");
 		return;
 	}
 	
@@ -229,18 +229,27 @@ public class ProblemSet3 {
 			factorial *= count;
 			count--;
 		}
-		System.out.println(factorial);
+		System.out.println(factorial + ".");
 	}
 	
 	public void isPrime(int n) {
+		if (n == 0 || n == 1) {
+			System.out.println("NOT PRIME.");
+			return;
+		}
+		if (n == 2) {
+			System.out.println("PRIME.");
+			return;
+		}
+		
 		double sqrt = Math.sqrt(n);
 		for (int count = 2; count < (sqrt + 1); count++) {
 			if (n % count == 0) {
-				System.out.println("Not Prime");
+				System.out.println("NOT PRIME.");
 				return;
 			}
 		}
-		System.out.println("Prime");
+		System.out.println("PRIME.");
 		return;
 	}
 }
