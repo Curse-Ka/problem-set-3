@@ -157,10 +157,6 @@ public class ProblemSet3 {
 	}
 	
 	public void makeBricks(int small, int big, int goal) {
-		int remainder = goal % 5;
-		
-		
-		
 		if (small + big * 5 < goal) {
 			System.out.println("NO.");
 			return;
